@@ -1,7 +1,4 @@
-import sys
 import random
-# print('string'[1:])
-# sys.exit()
 def get_fact(n):
     if n == 1:
         return n
@@ -29,13 +26,14 @@ def get_multiplied_digits2(str_num2): #вариант без проверки 0 
 
 str_num = str(40203)
 str_num2 = str(190206508)
+
 ### генератор строки-числа
 str_num3 = []
-cnt = 7
-for i in range(cnt):
+for i in range(int(input('введите число цифр для подсчета их произведения: '))):
     str_num3.append(str(random.choice(range(0,10))))
 str_num3 = ''.join(str_num3)
 ### генератор строки-числа
+
 result = get_multiplied_digits(str_num)
 result2 = get_multiplied_digits2(str_num2)
 result3 = get_multiplied_digits2(str_num3)
