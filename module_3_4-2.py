@@ -1,5 +1,5 @@
 import sys
-
+import random
 # print('string'[1:])
 # sys.exit()
 def get_fact(n):
@@ -27,10 +27,18 @@ def get_multiplied_digits2(str_num2): #вариант без проверки 0 
     first_digit = int(str(int(str_num2))[0])
     return first_digit * get_multiplied_digits2(str(int(str_num2))[1:])
 
-
 str_num = str(40203)
 str_num2 = str(190206508)
+### генератор строки-числа
+str_num3 = []
+cnt = 7
+for i in range(cnt):
+    str_num3.append(str(random.choice(range(0,10))))
+str_num3 = ''.join(str_num3)
+### генератор строки-числа
 result = get_multiplied_digits(str_num)
 result2 = get_multiplied_digits2(str_num2)
+result3 = get_multiplied_digits2(str_num3)
 print(f'Произведение цифр числа {str_num} без учета нулей: {result}')
 print(f'Произведение цифр числа {str_num2} без учета нулей: {result2}')
+print(f'Произведение цифр числа {str_num3} без учета нулей: {result3}')
