@@ -19,7 +19,7 @@ def get_multiplied_digits(str_num):
 
 
 def get_multiplied_digits2(str_num2): #вариант без проверки 0 или нет.
-    if len(str(str_num2)) == 0:
+    if (len(str(str_num2)) == 0 or (len(str(str_num2))==1 and str_num2[0]=='0')):
         return 1
     first_digit = int(str(int(str_num2))[0])
     return first_digit * get_multiplied_digits2(str(int(str_num2))[1:])
@@ -29,9 +29,10 @@ str_num2 = str(190206508)
 
 ### генератор строки-числа
 str_num3 = []
-for i in range(int(input('введите число цифр для подсчета их произведения: '))):
-    str_num3.append(str(random.choice(range(0,10))))
+for i in range(int(input('введите количество цифр для подсчета их произведения: '))):
+    str_num3.append(str(random.randint(0,9)))
 str_num3 = ''.join(str_num3)
+# str_num3 = '2042790' #число для отладки бага с нулевым произведением
 ### генератор строки-числа
 
 result = get_multiplied_digits(str_num)
